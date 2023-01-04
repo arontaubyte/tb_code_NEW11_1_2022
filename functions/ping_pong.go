@@ -23,11 +23,12 @@ func ping(e event.Event) uint32 {
 	return 0
 }
 
-func testDatabase(h event.HttpEvent) uint32{
-	_database, err := database.New("Chat_Database")
+func testDatabase(h event.HttpEvent) error{
+	_database, err := database.New("failed_db")
 	if err != nil {
 		return err
 	}
 
 	fmt.Println(_database)
+	return nil
 }
